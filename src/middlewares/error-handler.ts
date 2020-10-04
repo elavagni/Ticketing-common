@@ -11,7 +11,10 @@ export const errorHandler = (
     //All expected errors should extend the CustomError abstract class
     if (err instanceof CustomError) {
         return res.status(err.statusCode).send({ errors: err.serializeErrors()});        
-    }   
+    }
+    
+    //Log unexpected error to the console
+    console.error(err);
 
     //If the type of error was not defined by us, return a generic message
     return res.status(400).send({ 
