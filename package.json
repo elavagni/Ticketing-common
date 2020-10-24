@@ -9,7 +9,9 @@
   ],
   "scripts": {
     "clean": "del-cli ./build/*",
-    "build": "npm run clean && tsc"
+    "build": "npm run clean && tsc",
+    "publish": "ts-node-dev --rs --notify false src/publisher.ts",
+    "listen": "ts-node-dev --rs --notify false src/listener.ts"
   },
   "keywords": [],
   "author": "",
